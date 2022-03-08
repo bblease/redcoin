@@ -1,0 +1,18 @@
+version: '0.0.0'
+services:
+  hardhat:
+    build:
+      context: './blockchain'
+    restart: 'on-failure'
+    volumes: 
+      - './blockchain:/app'
+      - '/app/node_modules'
+      - './blockchain/contracts:/app/tmp/contracts'
+    ports:
+      - '8545:8545'
+  redcoin-worker:
+    build:
+      context: './python/redcoin-worker/redcoin_worker'
+    restart: 'always'
+    depends_on:
+      - 'hardhat'

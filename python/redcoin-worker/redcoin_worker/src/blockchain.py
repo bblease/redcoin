@@ -1,9 +1,18 @@
+'''
+Worker for redistributing Rubles
+
+This script acts as an authority for redistributing wealth
+'''
+
 from web3 import Web3
 import web3
 
 import logging
 import json
 import os 
+
+# TODO - central authority address is constant
+AUTHORITY_ADDR = ''
 
 def blockchain_connect(host, port) -> Web3:
 	addr = f'http://{host}:{port}'
