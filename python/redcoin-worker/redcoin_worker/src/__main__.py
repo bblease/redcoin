@@ -1,5 +1,6 @@
 import argparse
 import coloredlogs, logging
+import time
 
 from .wordart import hammer_sickle
 from .blockchain import blockchain_connect, redcoin_connect
@@ -45,8 +46,9 @@ parser.add_argument(
 def main():
     args = parser.parse_args()
 
-    print(hammer_sickle)
-
     logger.info(f"Running redcoin worker with the following args: {args}")
 
     redcoin_connect(args.host, args.port, args.address, args.dev)
+
+    while True:
+    	time.sleep(100)

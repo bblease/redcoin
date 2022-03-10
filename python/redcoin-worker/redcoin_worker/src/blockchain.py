@@ -10,6 +10,7 @@ import web3
 import logging
 import json
 import os 
+from .wordart import hammer_sickle
 
 # TODO - central authority address is constant
 AUTHORITY_ADDR = ''
@@ -24,6 +25,8 @@ def blockchain_connect(host, port) -> Web3:
 def redcoin_connect(host, port, addr, dev):
 	chain = blockchain_connect(host, port)
 	assert chain.isConnected(), 'Not connected to chain'
+
+	print(hammer_sickle)
 
 	dir_path = os.path.dirname(os.path.realpath(__file__))
 	f_path = os.path.join(dir_path, 'abi', 'redcoin.json')

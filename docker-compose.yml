@@ -10,9 +10,13 @@ services:
       - './blockchain/contracts:/app/tmp/contracts'
     ports:
       - '8545:8545'
+    # keep the container running
+    tty: true 
+    stdin_open: true
   redcoin-worker:
     build:
       context: './python/redcoin-worker/redcoin_worker'
     restart: 'always'
     depends_on:
       - 'hardhat'
+    network_mode: 'host'
