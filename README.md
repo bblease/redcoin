@@ -19,4 +19,4 @@ This will load the hardhat environment for development.
 ```
 make redcoin-prod
 ```
-Will load the ETH contract onto test net, or a Geth node and create the frontend/python worker containers
+Will load the ETH contract onto test net, or a Geth node and create the frontend/python worker containers (planned)
