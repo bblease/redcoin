@@ -5,9 +5,6 @@
 </script>
 
 <main>
-	<div id='particle-js' class='background'>
-		
-	</div>
 </main>
 
 <style type='text/scss'>
