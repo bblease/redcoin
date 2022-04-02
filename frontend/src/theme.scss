@@ -1,0 +1,32 @@
+@use "sass:color";
+
+$windowsGrey: #a8a8a8;
+$windowsBorderDark: darken($windowsGrey, 10%);
+$windowsBorderLight: lighten($windowsGrey, 10%);
+
+.button {
+	border-top: 5px solid $windowsBorderLight;
+	border-left: 5px solid lighten($windowsBorderLight, 5%);
+	border-bottom: 5px solid $windowsBorderDark;
+	border-right: 5px solid darken($windowsBorderDark, 5%);
+	background: $windowsGrey;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: auto;
+	min-width: 150px;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+
+	&:hover {
+		background: lighten($windowsGrey, 5%);
+	}
+
+	&:active {
+		border-bottom: 5px solid $windowsBorderLight;
+		border-right: 5px solid lighten($windowsBorderLight, 5%);
+		border-top: 5px solid $windowsBorderDark;
+		border-left: 5px solid darken($windowsBorderDark, 5%);
+	}
+}

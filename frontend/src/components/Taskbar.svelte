@@ -1,0 +1,38 @@
+<script lang='ts'>
+	import star from '../assets/soviet_star.png';
+
+	let showStart: boolean;
+
+
+</script>
+
+<div class='taskbar'>
+	<button 
+		title='start' 
+		class='start-button button' 
+		on:click={() => showStart = true}>
+		Начало
+		<img src={star} height={30} />
+	</button>
+</div>
+
+<style lang='scss'>
+	@import '../theme';
+	.taskbar {
+		display: flex;
+		align-items: center;
+		background: $windowsGrey;
+		height: 50px;
+		width: 100vw;
+		position: absolute;
+		bottom: 0px;
+		border-top: 5px solid $windowsBorderLight;
+		border-bottom: 5px solid $windowsBorderDark;
+
+		.start-button {
+			height: 40px;
+		}
+	}
+
+	
+</style>
