@@ -9,6 +9,7 @@ Why does this exist? Why not!
 
 Creating a token, with Python and JS/TS applications running on top of it is a challenge
 
+#### Backend Stack
 To run with docker and the makefile: 
 
 ```
@@ -20,3 +21,10 @@ This will load the hardhat environment for development.
 make redcoin-prod
 ```
 Will load the ETH contract onto test net, or a Geth node and create the frontend/python worker containers (planned)
+
+#### Frontend
+
+The frontend is written in Svelte and can be installed with `yarn` in the project directory
+
+Run `yarn start` to start the frontend. See the README in the frontend directory for more detailed instructions and info
+
