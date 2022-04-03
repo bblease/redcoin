@@ -8,7 +8,16 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		// this is CRUCIAL 
+		// leaving this out breaks logging and hotload
+		vite: {
+			server: {
+				fs: {
+					allow: ['..']
+				}
+			}
+		}
 	}
 };
 
