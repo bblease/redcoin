@@ -2,6 +2,7 @@
 <script lang='ts'>
 	import executeIcon from '../assets/images/execute.png';
 	import toilIcon from '../assets/images/toil.png';
+	import settingsIcon from '../assets/images/settings.png';
 
 	import { count } from '../stores/rubles';
 	import { WindowManager } from '../stores/WindowStore';
@@ -28,7 +29,7 @@
 				WindowManager.openWindow({
 					name,
 					icon,
-					focus: false,
+					focus: true,
 					component: Execute
 				})
 			},
@@ -39,10 +40,21 @@
 				WindowManager.openWindow({
 					name,
 					icon,
-					focus: false,
+					focus: true,
 					component: Execute
 				})
 			},
+		}, {
+			name: 'settings',
+			icon: settingsIcon,
+			open: ({ name, icon }) => { 
+				WindowManager.openWindow({
+					name,
+					icon,
+					focus: true,
+					component: Execute
+				})
+			}
 		}
 	];
 
@@ -89,7 +101,7 @@
 	}
 
 	#popup {
-		z-index: 2;
+		z-index: 10000;
 		position: absolute;
 		bottom: 100px;
 		right: 5%;

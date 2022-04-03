@@ -1,1 +1,1 @@
-export {default as Execute } from './Execute.svelte';
+export { default as Execute } from './Execute.svelte';

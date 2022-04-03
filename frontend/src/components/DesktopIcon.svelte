@@ -6,7 +6,7 @@
 </script>
 
 <div class='icon-body' on:click={() => open({ name, icon })}>
-	<img src={icon} height={150}>
+	<img src={icon} height={100}>
 	<span>{name}</span>
 </div>
 

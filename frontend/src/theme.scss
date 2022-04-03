@@ -1,19 +1,19 @@
-@use "sass:color";
+@use 'sass:color';
 @font-face {
-    font-family: 'VT323';
-    src: url('src/assets/fonts/VT323-Regular.ttf') format('truetype');
+	font-family: 'VT323';
+	src: url('src/assets/fonts/VT323-Regular.ttf') format('truetype');
 }
 
 // russian font face
 @font-face {
-    font-family: 'basis33';
-    src: url('src/assets/fonts/basis33.ttf') format('truetype');
+	font-family: 'basis33';
+	src: url('src/assets/fonts/basis33.ttf') format('truetype');
 }
 
 // chinese font face
 @font-face {
-    font-family: 'GNU-uniform';
-    src: url('src/assets/fonts/GNU_uniform.ttf') format('truetype');
+	font-family: 'GNU-uniform';
+	src: url('src/assets/fonts/GNU_uniform.ttf') format('truetype');
 }
 
 $windowsGrey: #a8a8a8;
@@ -66,5 +66,4 @@ main {
 		border-top: 5px solid $windowsBorderDark;
 		border-left: 5px solid darken($windowsBorderDark, 5%);
 	}
-
 }
