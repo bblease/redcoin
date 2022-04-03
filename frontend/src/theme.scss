@@ -1,8 +1,39 @@
 @use "sass:color";
+@font-face {
+    font-family: 'VT323';
+    src: url('./assets/fonts/VT323-Regular.ttf') format('truetype');
+}
+
+// russian font face
+@font-face {
+    font-family: 'basis33';
+    src: url('src/assets/fonts/basis33.ttf') format('truetype');
+}
+
+// chinese font face
+@font-face {
+    font-family: 'GNU_uniform';
+    src: url('src/assets/fonts/GNU_uniform.ttf') format('truetype');
+}
 
 $windowsGrey: #a8a8a8;
 $windowsBorderDark: darken($windowsGrey, 10%);
 $windowsBorderLight: lighten($windowsGrey, 10%);
+
+main {
+	font-family: VT323;
+	font-size: 1.5rem;
+}
+
+.russian {
+	font-size: 2rem;
+	font-family: basis33;
+	font-weight: bolder;
+}
+
+.chinese {
+	font-family: GNU-uniform;
+}
 
 .button {
 	border-top: 5px solid $windowsBorderLight;
@@ -10,7 +41,7 @@ $windowsBorderLight: lighten($windowsGrey, 10%);
 	border-bottom: 5px solid $windowsBorderDark;
 	border-right: 5px solid darken($windowsBorderDark, 5%);
 	background: $windowsGrey;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -29,4 +60,8 @@ $windowsBorderLight: lighten($windowsGrey, 10%);
 		border-top: 5px solid $windowsBorderDark;
 		border-left: 5px solid darken($windowsBorderDark, 5%);
 	}
+}
+
+.close-button {
+
 }

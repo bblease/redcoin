@@ -1,15 +1,13 @@
 <script lang='ts'>
-	import star from '../assets/soviet_star.png';
+	import star from '../assets/icons/soviet_star.png';
 
 	let showStart: boolean;
-
-
 </script>
 
 <div class='taskbar'>
 	<button 
 		title='start' 
-		class='start-button button' 
+		class='start-button button russian' 
 		on:click={() => showStart = true}>
 		Начало
 		<img src={star} height={30} />
