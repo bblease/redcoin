@@ -3,19 +3,32 @@
 
 	export let name: string;
 
-	export let left: number = 100;
-	export let top: number = 100;
+	export let left: number = 300;
+	export let top: number = 300;
 	
 	let moving: boolean = false;
-	
+		
+	// inner height - taskbar height - window header height
+	const desktopHeight = window.innerHeight - 60 - 40;
+	const desktopWidth = window.innerWidth - 40;
+
 	function onMouseDown() {
 		moving = true;
 	}
 	
 	function onMouseMove(e) {
 		if (moving) {
-			left += e.movementX;
-			top += e.movementY;
+			if (top + e.movementY > desktopHeight) {
+				top = desktopHeight;
+			} else {
+				top += e.movementY;
+			}
+
+			if (left + e.movementX > desktopWidth) {
+				left = desktopWidth;
+			} else {
+				left += e.movementX;
+			}	
 		}
 	}
 	
