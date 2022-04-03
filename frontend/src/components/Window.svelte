@@ -8,9 +8,13 @@
 	
 	let moving: boolean = false;
 		
+
+	$: innerHeight = 0;
+	$: innerWidth = 0;
+
 	// inner height - taskbar height - window header height
-	const desktopHeight = window.innerHeight - 60 - 40;
-	const desktopWidth = window.innerWidth - 40;
+	$: desktopHeight = innerHeight - 60 - 40;
+	$: desktopWidth = innerWidth - 40;
 
 	function onMouseDown() {
 		moving = true;
@@ -51,7 +55,7 @@
 	</div>
 </div>
 
-<svelte:window on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
+<svelte:window bind:innerWidth bind:innerHeight on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
 
 <style lang='scss'>
 	@import '../theme';

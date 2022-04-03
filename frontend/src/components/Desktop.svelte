@@ -9,6 +9,8 @@
 	import Window from './Window.svelte';
 	import DesktopIcon from './DesktopIcon.svelte';
 
+	import { Execute } from './apps';
+
 	type IconData = {
 		name: string;
 		// TODO figure out the img import type
@@ -21,7 +23,9 @@
 		{
 			name: 'execute a comrade',
 			icon: executeIcon,
-			open: () => { },
+			open: () => { 
+
+			},
 		}
 	]
 

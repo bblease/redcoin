@@ -29,4 +29,8 @@ export class WindowStore {
 	public closeWindow(name: string) {
 		this.windows.update(windows => windows.filter((w: Window) => w.name !== name));
 	}
+
+	public openWindow(data: Window) {
+		this.windows.update(windows => [...windows, data]);
+	}
 }
