@@ -35,20 +35,23 @@ main {
 	font-family: 'GNU-uniform';
 }
 
-.button {
-	border-top: 5px solid $windowsBorderLight;
-	border-left: 5px solid lighten($windowsBorderLight, 5%);
-	border-bottom: 5px solid $windowsBorderDark;
-	border-right: 5px solid darken($windowsBorderDark, 5%);
+.box-element {
 	background: $windowsGrey;
+	border-top: 5px solid $windowsBorderLight;
+	border-left: 5px solid lighten($windowsBorderLight, 10%);
+	border-bottom: 5px solid $windowsBorderDark;
+	border-right: 5px solid darken($windowsBorderDark, 10%);
+}
+
+.button {
+	@extend .box-element;
+
 	font-size: 2rem;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	padding: auto;
 	width: fit-content;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
 
 	cursor: pointer;
 	user-select: none;

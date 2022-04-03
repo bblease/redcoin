@@ -1,4 +1,4 @@
-import { derived, writable, Writable } from 'svelte/store';
+import { derived, writable, type Writable } from 'svelte/store';
 
 interface Window {
 	name: string;
@@ -9,7 +9,7 @@ interface Window {
 	component: any;
 }
 
-class WindowStore {
+export class WindowStore {
 	public windows: Writable<Window[]>;
 	constructor() {
 		this.windows = writable([]);

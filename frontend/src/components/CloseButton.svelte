@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import closeIcon from '../assets/icons/close.png';
-	const HEIGHT = 15;
+	const HEIGHT = 10;
 
 	export let close: () => void;
 

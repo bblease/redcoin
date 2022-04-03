@@ -27,9 +27,10 @@
 		position: absolute;
 		top: 0px;
 		left: 0px;
-		background: #e02d2d; 
+		background: #de3333; 
 		height: 100vh;
 		width: 100vw;
+		overflow: hidden;
 	}
 </style>
 
