@@ -3,7 +3,7 @@
 	import executeIcon from '../assets/images/execute.png';
 
 	import { count } from '../stores/rubles';
-	import { WindowStore } from '../stores/WindowStore';
+	import { WindowManager } from '../stores/WindowStore';
 	
 	import DaddyXi from './DaddyXi.svelte';
 	import Window from './Window.svelte';
@@ -23,28 +23,36 @@
 		{
 			name: 'execute a comrade',
 			icon: executeIcon,
-			open: () => { 
-
+			open: ({ name, icon }) => { 
+				WindowManager.openWindow({
+					name,
+					icon,
+					focus: false,
+					component: Execute
+				})
 			},
 		}
-	]
+	];
 
-	let rubles;
+	const { windows } = WindowManager;
 
-	count.subscribe(n => rubles = n);
+	const setFocus = (i: number) => WindowManager.setFocus(i);
+	const closeWindow = (name: string) => WindowManager.closeWindow(name);
 </script>
 <div class='desktop'>
-	<h1 class="ruble-counter">{rubles}₽</h1>
+	<h1 class="ruble-counter">{$count}₽</h1>
 	<div class='icon-container'>
 		{#each icons as icon}
-			<DesktopIcon name={icon.name} open={icon.open}>
-				<img src={icon.icon} height={150} />
-			</DesktopIcon>
+			<DesktopIcon {...icon} />
 		{/each}
 	</div>
-	<Window name='window'>
-		<span>hello</span>
-	</Window>
+
+	{#each $windows as win, i}
+		<Window close={() => closeWindow(win.name)} onDrag={() => setFocus(i)} offset={i * 20} {...win}>
+			<svelte:component this={win.component} /> 
+		</Window>
+
+	{/each}
 	<div id='popup'>
 		<DaddyXi />
 	</div>

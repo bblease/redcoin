@@ -1,11 +1,12 @@
 <script lang='ts'>
 	export let name: string;
+	export let icon: string;
 	// on click open action to be called
 	export let open: () => void;
 </script>
 
-<div class='icon-body' on:click={open}>
-	<slot></slot>
+<div class='icon-body' on:click={() => open({ name, icon })}>
+	<img src={icon} height={150}>
 	<span>{name}</span>
 </div>
 

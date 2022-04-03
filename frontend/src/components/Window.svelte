@@ -2,10 +2,16 @@
 	import CloseButton from './CloseButton.svelte';
 
 	export let name: string;
+	export let icon: string;
+	export let offset: number;
+	export let focus: boolean;
+	export let onDrag: () => void;
+	export let close: () => void;
 
-	export let left: number = 300;
-	export let top: number = 300;
+	export let left: number = 300 + offset;
+	export let top: number = 300 + offset;
 	
+
 	let moving: boolean = false;
 		
 
@@ -17,6 +23,8 @@
 	$: desktopWidth = innerWidth - 40;
 
 	function onMouseDown() {
+		onDrag();
+
 		moving = true;
 	}
 	
@@ -39,13 +47,13 @@
 	function onMouseUp() {
 		moving = false;
 	}
-	
-	const close = () => {};
+
+	$: zIndex = focus ? 9999 : 'unset';
 </script>
 
-<div class='window' style="left: {left}px; top: {top}px;">
+<div class='window' style="left: {left}px; top: {top}px; z-index: {zIndex};">
 	<div on:mousedown={onMouseDown}  class="box-element draggable header">
-		<div class='icon'></div>
+		<div class='icon'><img src={icon} height={20}></div>
 		{name}
 		<CloseButton close={close} />
 	</div>

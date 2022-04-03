@@ -2,7 +2,7 @@
 </script>
 
 <div>
-	<h1>Execute</h1>
+	<span>Execute</span>
 </div>
 
 <style lang='scss'>
