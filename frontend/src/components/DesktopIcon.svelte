@@ -17,12 +17,17 @@
 		align-items: center;
 		width: 150px;
 		cursor: pointer;
+		margin: 1rem 0rem; 
 
 		span {
 			word-wrap: break-word;
 			text-align: center;
 			text-decoration: underline;
 			font-weight: bolder;
+		}
+
+		img {
+			border: 4px solid black;
 		}
 	}
 </style>

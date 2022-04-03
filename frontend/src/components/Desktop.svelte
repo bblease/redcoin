@@ -1,6 +1,7 @@
 <!-- Desktop container and window container -->
 <script lang='ts'>
 	import executeIcon from '../assets/images/execute.png';
+	import toilIcon from '../assets/images/toil.png';
 
 	import { count } from '../stores/rubles';
 	import { WindowManager } from '../stores/WindowStore';
@@ -23,6 +24,17 @@
 		{
 			name: 'execute a comrade',
 			icon: executeIcon,
+			open: ({ name, icon }) => { 
+				WindowManager.openWindow({
+					name,
+					icon,
+					focus: false,
+					component: Execute
+				})
+			},
+		}, {
+			name: 'toil ₽+',
+			icon: toilIcon,
 			open: ({ name, icon }) => { 
 				WindowManager.openWindow({
 					name,
