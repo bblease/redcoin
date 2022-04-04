@@ -7,7 +7,7 @@ Redcoin - a communist shitcoin running a contract based off the ERC-20 contract 
 
 Toil to earn rubles. Call a vote to execute another user and redistribute their coins if they get too rich. The more you toil, the more you earn, so watch your output!
 
-Why does this exist? Why not!
+Why does this exist? Why not! This project has presented a challenge in learning Svelte and Solidity and using Python for off-chain computation.
 
 Creating a token, with Python and JS/TS applications running on top of it is a challenge
 
