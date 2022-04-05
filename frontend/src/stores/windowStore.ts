@@ -40,7 +40,8 @@ export class WindowStore {
 	}
 
 	public closeWindow = (name: string) => {
-		this.windows.update((windows) => windows.filter((w: Window) => w.name !== name));
+		this.windows.update((windows) => {console.log(windows); return windows.filter((w: Window) => w.name !== name)});
+
 	};
 
 	public openWindow = (data: Window) => {
@@ -67,8 +68,6 @@ export class WindowStore {
 	};
 
 	public moveWindow = (name: string, left: number, top: number) => {
-		console.log(name);
-
 		this.windows.update((windows: Window[]) => 
 			windows.map((window: Window) => window.name === name ? { ...window, left, top } : window)
 		)

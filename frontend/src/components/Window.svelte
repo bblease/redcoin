@@ -3,10 +3,12 @@
 
 	import { WindowManager } from '../stores/WindowStore';
 
+	// props
 	export let name: string;
 	export let icon: string;
-	export let offset: number;
 	export let focus: boolean;
+	export let component: any;
+
 	export let onDrag: () => void;
 	export let close: () => void;
 
@@ -29,8 +31,11 @@
 		moving = true;
 	}
 
-	let leftPos: number = left;
-	let topPos: number = top;
+	let leftPos: number;
+	let topPos: number;
+
+	$: leftPos = left;
+	$: topPos = top;
 	
 	function onMouseMove(e) {
 		if (moving) {
