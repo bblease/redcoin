@@ -1,14 +1,26 @@
 <script lang='ts'>
 	import Taskbar from '../components/Taskbar.svelte';
 	import Desktop from '../components/Desktop.svelte';
+	import Splash from '../components/Splash.svelte';
+
+	// disable splash during development
+	let disableSplash: boolean = false;
+	let showSplash: boolean = true;
+
+	if (!disableSplash)
+		setTimeout(() => showSplash = false, 2500);
 </script>
 <main>
+	{#if showSplash}
+	<Splash />
+	{:else}
 	<div class='desktop-background desktop'>
 		<div class='desktop-container'>
 			<Desktop />
 		</div>
 		<Taskbar />
 	</div>
+	{/if}
 </main>
 
 <style lang='scss'>
