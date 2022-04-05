@@ -4,14 +4,14 @@
 	import Splash from '../components/Splash.svelte';
 
 	// disable splash during development
-	let disableSplash: boolean = false;
+	let disableSplash: boolean = true;
 	let showSplash: boolean = true;
 
 	if (!disableSplash)
 		setTimeout(() => showSplash = false, 2500);
 </script>
 <main>
-	{#if showSplash}
+	{#if showSplash && !disableSplash}
 	<Splash />
 	{:else}
 	<div class='desktop-background desktop'>

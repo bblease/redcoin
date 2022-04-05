@@ -2,11 +2,16 @@ import { derived, writable, type Writable } from 'svelte/store';
 
 interface Window {
 	name: string;
-	focused: boolean;
+	focus: boolean;
 	icon: any;
 
 	// TODO - figure out this type
 	component: any;
+}
+
+interface WindowPos extends Window {
+	left: number;
+	top: number;
 }
 
 interface WindowInfo {
@@ -16,7 +21,7 @@ interface WindowInfo {
 }
 
 export class WindowStore {
-	public windows: Writable<Window[]>;
+	public windows: Writable<WindowPos[]>;
 	constructor() {
 		this.windows = writable([]);
 	}
@@ -39,15 +44,17 @@ export class WindowStore {
 	};
 
 	public openWindow = (data: Window) => {
-		this.windows.update((windows) => {
-			console.log(windows);
+		this.windows.update((windows: WindowPos) => {
+			const newWindow: WindowPos = { 
+				...data, 
+				left: 300 + 20 * windows.length, 
+				top: 300 + 20 * windows.length 
+			};
 
 			if (!windows.map((window: Window) => window.name).includes(data.name))
-				return [...windows, data];
+				return [...windows, newWindow];
 			else
-				return windows.map((window: Window) =>
-					window.name === data.name ? { ...window, focus: true } : window
-				);
+				return windows
 		});
 	};
 
@@ -58,6 +65,14 @@ export class WindowStore {
 			);
 		});
 	};
+
+	public moveWindow = (name: string, left: number, top: number) => {
+		console.log(name);
+
+		this.windows.update((windows: Window[]) => 
+			windows.map((window: Window) => window.name === name ? { ...window, left, top } : window)
+		)
+	}
 }
 
 export const WindowManager = new WindowStore();

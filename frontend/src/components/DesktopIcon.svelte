@@ -1,8 +1,9 @@
 <script lang='ts'>
+
 	export let name: string;
 	export let icon: string;
 	// on click open action to be called
-	export let open: () => void;
+	export let open: (props: {name: string, icon: string}) => void;
 </script>
 
 <div class='icon-body' on:click={() => open({ name, icon })}>

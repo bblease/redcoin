@@ -18,7 +18,7 @@
 		// TODO figure out the img import type
 		// assumed to be an img value
 		icon: any;
-		open: () => void;
+		open: (props: {name: string; icon: string}) => void;
 	}
 
 	const icons: IconData[] = [
@@ -62,6 +62,8 @@
 
 	const setFocus = (i: number) => WindowManager.setFocus(i);
 	const closeWindow = (name: string) => WindowManager.closeWindow(name);
+
+	console.log(windows);
 </script>
 <div class='desktop'>
 	<h1 class="ruble-counter">{$count}₽</h1>

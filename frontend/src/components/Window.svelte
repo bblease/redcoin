@@ -1,6 +1,8 @@
 <script lang='ts'>
 	import CloseButton from './CloseButton.svelte';
 
+	import { WindowManager } from '../stores/WindowStore';
+
 	export let name: string;
 	export let icon: string;
 	export let offset: number;
@@ -8,9 +10,8 @@
 	export let onDrag: () => void;
 	export let close: () => void;
 
-	export let left: number = 300 + offset;
-	export let top: number = 300 + offset;
-	
+	export let left: number;
+	export let top: number;
 
 	let moving: boolean = false;
 		
@@ -27,20 +28,24 @@
 
 		moving = true;
 	}
+
+	let leftPos: number = left;
+	let topPos: number = top;
 	
 	function onMouseMove(e) {
 		if (moving) {
 			if (top + e.movementY > desktopHeight) {
-				top = desktopHeight;
+				topPos = desktopHeight;
 			} else {
-				top += e.movementY;
+				topPos += e.movementY;
 			}
 
 			if (left + e.movementX > desktopWidth) {
-				left = desktopWidth;
+				leftPos = desktopWidth;
 			} else {
-				left += e.movementX;
+				leftPos += e.movementX;
 			}	
+			WindowManager.moveWindow(name, leftPos, topPos);	
 		}
 	}
 	
