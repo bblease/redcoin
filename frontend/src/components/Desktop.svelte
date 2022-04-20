@@ -74,7 +74,7 @@
 	</div>
 
 	{#each $windows as win, i}
-		<Window close={() => closeWindow(win.name)} onDrag={() => setFocus(i)} offset={i * 20} {...win}>
+		<Window close={() => closeWindow(win.name)} onDrag={() => setFocus(i)} {...win}>
 			<svelte:component this={win.component} /> 
 		</Window>
 

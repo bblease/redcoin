@@ -26,6 +26,7 @@
 		bottom: 0px;
 		border-top: 5px solid $windowsBorderLight;
 		border-bottom: 5px solid $windowsBorderDark;
+		z-index: 9999;
 
 		.start-button {
 			height: 40px;
