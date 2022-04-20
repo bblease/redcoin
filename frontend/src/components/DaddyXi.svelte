@@ -13,7 +13,7 @@
 			<CloseButton close={close} />
 		</div>
 		<div>
-			<img class='xi' src={xi} height={250} />
+			<img alt='Daddy Xi' class='xi' src={xi} height={250} />
 		</div>
 		<div class='catch-phrase'>
 			<span class='chinese'>哇，多么高的分数!</span>

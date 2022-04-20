@@ -10,7 +10,7 @@
 		class='start-button button russian' 
 		on:click={() => showStart = true}>
 		Начало
-		<img src={star} height={30} />
+		<img alt='soviet star' src={star} height={30} />
 	</button>
 </div>
 

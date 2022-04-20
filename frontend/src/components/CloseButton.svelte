@@ -7,7 +7,7 @@
 </script>
 
 <div class='button close-button' on:click={close}>
-	<img src={closeIcon} height={HEIGHT} width={HEIGHT}/>
+	<img alt='close icon' src={closeIcon} height={HEIGHT} width={HEIGHT}/>
 </div>
 
 <style lang='scss'>
